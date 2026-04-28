@@ -1,0 +1,4 @@
+/vendor/
+/.env.test.local
+/.phpunit.result.cache
+/.idea
