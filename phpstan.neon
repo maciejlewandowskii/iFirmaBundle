@@ -1,0 +1,10 @@
+parameters:
+    level: 10
+    paths:
+        - src
+        - tests
+    phpVersion: 80300
+    treatPhpDocTypesAsCertain: false
+    excludePaths:
+        - src/Resources/config/services.php
+        - examples
