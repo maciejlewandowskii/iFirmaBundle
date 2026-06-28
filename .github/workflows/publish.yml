@@ -27,8 +27,9 @@ jobs:
         run: |
           VERSION="${{ steps.version.outputs.version }}"
           ARCHIVE="ifirma-bundle-${VERSION}.tar.gz"
-          jq --arg v "$VERSION" '.version = $v' composer.json > composer.json.tmp && mv composer.json.tmp composer.json
-          tar -czf "$ARCHIVE" \
+          jq --arg v "$VERSION" '.version = $v' composer.json > composer.json.tmp
+          mv composer.json.tmp composer.json
+          tar -czf "/tmp/${ARCHIVE}" \
             --exclude='.git' \
             --exclude='vendor' \
             --exclude='tests' \
@@ -40,6 +41,7 @@ jobs:
             --exclude='*.result.cache' \
             --transform "s|^\.|ifirma-bundle-${VERSION}|" \
             .
+          mv "/tmp/${ARCHIVE}" "./${ARCHIVE}"
           echo "archive=${ARCHIVE}" >> $GITHUB_OUTPUT
         id: archive
 
