@@ -2,3 +2,4 @@
 /.env.test.local
 /.phpunit.result.cache
 /.idea
+/.php-cs-fixer.cache

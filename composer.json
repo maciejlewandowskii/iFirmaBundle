@@ -1,6 +1,6 @@
 {
-    "name": "maciejlewandowskii/ifirma-api",
-    "description": "iFirma API integration library built with Symfony components",
+    "name": "maciejlewandowskii/ifirma-bundle",
+    "description": "iFirma Symfony Bundle for easy invoicing integration.",
     "type": "library",
     "require": {
         "php": ">=8.3",
