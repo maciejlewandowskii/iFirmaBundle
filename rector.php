@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use Rector\Php81\Rector\Array_\ArrayToFirstClassCallableRector;
 use Rector\Set\ValueObject\SetList;
 
 /** @noinspection PhpUnhandledExceptionInspection */
@@ -12,6 +13,9 @@ return RectorConfig::configure()
         __DIR__ . '/tests',
     ])
     ->withPhpSets(php83: true)
+    ->withSkip([
+        ArrayToFirstClassCallableRector::class,
+    ])
     ->withSets([
         SetList::CODE_QUALITY,
         SetList::DEAD_CODE,

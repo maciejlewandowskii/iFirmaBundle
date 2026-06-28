@@ -113,12 +113,45 @@ $api = iFirmaApiFactory::create(
 $api->invoiceService->create(/* ... */);
 ```
 
-## Testing
+## Development
+
+### Running tests
 
 ```bash
-composer test               # unit tests
-composer test:integration   # integration tests (requires real iFirma credentials)
+# Unit tests (no credentials needed)
+vendor/bin/phpunit --testsuite Unit
+
+# Integration tests (require real iFirma credentials in .env.test.local)
+vendor/bin/phpunit --testsuite Integration
 ```
+
+Copy `.env.test` to `.env.test.local` and fill in your credentials to run integration tests:
+
+```dotenv
+IFIRMA_USERNAME=your_username
+IFIRMA_INVOICE_KEY=your_invoice_key
+IFIRMA_SUBSCRIBER_KEY=your_subscriber_key
+IFIRMA_EXPENSE_KEY=your_expense_key# optional
+```
+
+### Code coverage
+
+Coverage is enforced at **95% minimum** on every CI run (PHP 8.3 and 8.4). The full report is uploaded to [Codecov](https://codecov.io/gh/maciejlewandowskii/iFirmaBundle) on each push to `main`.
+
+### Code style & static analysis
+
+```bash
+# Fix code style
+vendor/bin/php-cs-fixer fix
+
+# Apply Rector refactors
+vendor/bin/rector process
+
+# Run PHPStan (level 10)
+vendor/bin/phpstan analyse
+```
+
+All three are enforced in CI via the [Lint](.github/workflows/lint.yml) and [Static Analysis](.github/workflows/static-analysis.yml) workflows. The security job also runs `composer audit` and `composer-require-checker` on every push.
 
 ## License
 
