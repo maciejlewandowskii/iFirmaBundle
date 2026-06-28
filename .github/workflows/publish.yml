@@ -23,18 +23,18 @@ jobs:
         id: version
         run: echo "version=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
 
-      - name: Update composer.json version
-        run: |
-          jq --arg v "${{ steps.version.outputs.version }}" '.version = $v' composer.json > composer.json.tmp
-          mv composer.json.tmp composer.json
-
       - name: Commit version bump
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          git pull --rebase origin main
+          jq --arg v "${{ steps.version.outputs.version }}" '.version = $v' composer.json > composer.json.tmp
+          mv composer.json.tmp composer.json
           git add composer.json
           git commit -m "feat: bump version to ${{ steps.version.outputs.version }}"
-          git push origin HEAD:main
+          git push origin main
 
       - name: Build release archive
         run: |
