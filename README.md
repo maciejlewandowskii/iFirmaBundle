@@ -1,12 +1,12 @@
 # iFirma API Bundle
 
-[![Tests](https://github.com/maciejlewandowskii/ifirma-bundle/actions/workflows/tests.yml/badge.svg)](https://github.com/maciejlewandowskii/ifirma-bundle/actions/workflows/tests.yml)
-[![Static Analysis](https://github.com/maciejlewandowskii/ifirma-bundle/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/maciejlewandowskii/ifirma-bundle/actions/workflows/static-analysis.yml)
-[![Lint](https://github.com/maciejlewandowskii/ifirma-bundle/actions/workflows/lint.yml/badge.svg)](https://github.com/maciejlewandowskii/ifirma-bundle/actions/workflows/lint.yml)
-[![Coverage](https://codecov.io/gh/maciejlewandowskii/ifirma-bundle/graph/badge.svg)](https://codecov.io/gh/maciejlewandowskii/ifirma-bundle)
+[![Tests](https://github.com/maciejlewandowskii/iFirmaBundle/actions/workflows/tests.yml/badge.svg)](https://github.com/maciejlewandowskii/iFirmaBundle/actions/workflows/tests.yml)
+[![Static Analysis](https://github.com/maciejlewandowskii/iFirmaBundle/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/maciejlewandowskii/iFirmaBundle/actions/workflows/static-analysis.yml)
+[![Lint](https://github.com/maciejlewandowskii/iFirmaBundle/actions/workflows/lint.yml/badge.svg)](https://github.com/maciejlewandowskii/iFirmaBundle/actions/workflows/lint.yml)
+[![Coverage](https://codecov.io/gh/maciejlewandowskii/iFirmaBundle/graph/badge.svg)](https://codecov.io/gh/maciejlewandowskii/iFirmaBundle)
 [![Latest Version](https://img.shields.io/packagist/v/maciejlewandowskii/ifirma-bundle)](https://packagist.org/packages/maciejlewandowskii/ifirma-bundle)
 [![PHP Version](https://img.shields.io/packagist/php-v/maciejlewandowskii/ifirma-bundle)](https://packagist.org/packages/maciejlewandowskii/ifirma-bundle)
-[![License](https://img.shields.io/github/license/maciejlewandowskii/ifirma-bundle)](LICENSE)
+[![License](https://img.shields.io/github/license/maciejlewandowskii/iFirmaBundle)](LICENSE)
 
 Symfony bundle providing a clean integration with the [iFirma API](https://www.ifirma.pl/api) — create and manage invoices, contractors, expenses, payments, employees, and accounting months from your application.
 
