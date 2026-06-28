@@ -18,7 +18,7 @@ return static function (ContainerConfigurator $container, ContainerBuilder $buil
     $services = $container->services()->defaults()->autowire()->autoconfigure();
 
     $services->set(iFirmaApi::class)
-        ->factory([iFirmaApiFactory::class, 'create'])
+        ->factory(iFirmaApiFactory::create(...))
         ->args([
             '%ifirma_api.credentials.username%',
             '%ifirma_api.credentials.invoice_key%',

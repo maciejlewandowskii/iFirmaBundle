@@ -67,4 +67,4 @@ jobs:
       - name: Check for missing dependencies (composer-require-checker)
         run: |
           wget https://github.com/maglnet/ComposerRequireChecker/releases/latest/download/composer-require-checker.phar
-          php composer-require-checker.phar check --config-file=composer.json
+          php composer-require-checker.phar check composer.json

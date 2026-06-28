@@ -87,7 +87,7 @@ final class SynchronizationManagerTest extends TestCase
         return new SynchronizationManager($api, $this->eventDispatcher);
     }
 
-    private static function makeInvoiceRequest(): CreateInvoiceRequest
+    private function makeInvoiceRequest(): CreateInvoiceRequest
     {
         return new CreateInvoiceRequest(
             calculationBasis: CalculationBasis::Net,
@@ -107,7 +107,7 @@ final class SynchronizationManagerTest extends TestCase
         );
     }
 
-    private static function makeVatPurchaseRequest(): CreateVatPurchaseRequest
+    private function makeVatPurchaseRequest(): CreateVatPurchaseRequest
     {
         return new CreateVatPurchaseRequest(
             invoiceNumber: 'FV/2024/1',
@@ -126,7 +126,7 @@ final class SynchronizationManagerTest extends TestCase
         );
     }
 
-    private static function makeOtherCostRequest(): CreateOtherCostRequest
+    private function makeOtherCostRequest(): CreateOtherCostRequest
     {
         return new CreateOtherCostRequest(
             documentType: ExpenseDocumentType::Receipt,
@@ -142,7 +142,7 @@ final class SynchronizationManagerTest extends TestCase
     public function testSyncInvoiceCreatesAndSetsId(): void
     {
         $manager = $this->makeManager(['Kod' => 0, 'Informacja' => 'OK', 'Identyfikator' => 'FV/1/2024']);
-        $request = self::makeInvoiceRequest();
+        $request = $this->makeInvoiceRequest();
         $entity = new class($request) implements IFirmaInvoiceInterface {
             use IFirmaEntityTrait;
             use InvoiceActionsTrait;
@@ -167,7 +167,7 @@ final class SynchronizationManagerTest extends TestCase
     public function testSyncInvoiceDispatchesPreAndPostEvents(): void
     {
         $manager = $this->makeManager(['Kod' => 0, 'Informacja' => 'OK', 'Identyfikator' => 'FV/1']);
-        $request = self::makeInvoiceRequest();
+        $request = $this->makeInvoiceRequest();
         $entity = new class($request) implements IFirmaInvoiceInterface {
             use IFirmaEntityTrait;
             use InvoiceActionsTrait;
@@ -199,7 +199,7 @@ final class SynchronizationManagerTest extends TestCase
     public function testSyncCanceledByPreEvent(): void
     {
         $manager = $this->makeManager(['Kod' => 0, 'Informacja' => 'OK', 'Identyfikator' => 'FV/1']);
-        $request = self::makeInvoiceRequest();
+        $request = $this->makeInvoiceRequest();
         $entity = new class($request) implements IFirmaInvoiceInterface {
             use IFirmaEntityTrait;
             use InvoiceActionsTrait;
@@ -279,7 +279,7 @@ final class SynchronizationManagerTest extends TestCase
     public function testSyncVatExpenseSetsId(): void
     {
         $manager = $this->makeManager(['Kod' => 0, 'Informacja' => 'OK', 'Wynik' => 'EXP-1']);
-        $request = self::makeVatPurchaseRequest();
+        $request = $this->makeVatPurchaseRequest();
         $entity = new class($request) implements IFirmaVatExpenseInterface {
             use IFirmaEntityTrait;
             use VatExpenseActionsTrait;
@@ -303,7 +303,7 @@ final class SynchronizationManagerTest extends TestCase
     public function testSyncOtherExpenseSetsId(): void
     {
         $manager = $this->makeManager(['Kod' => 0, 'Informacja' => 'OK', 'Wynik' => 'OTH-1']);
-        $request = self::makeOtherCostRequest();
+        $request = $this->makeOtherCostRequest();
         $entity = new class($request) implements IFirmaOtherExpenseInterface {
             use IFirmaEntityTrait;
             use OtherExpenseActionsTrait;
@@ -359,7 +359,7 @@ final class SynchronizationManagerTest extends TestCase
     public function testSyncVatExpenseCanceledByPreEvent(): void
     {
         $manager = $this->makeManager(['Kod' => 0, 'Informacja' => 'OK', 'Wynik' => 'EXP-1']);
-        $request = self::makeVatPurchaseRequest();
+        $request = $this->makeVatPurchaseRequest();
         $entity = new class($request) implements IFirmaVatExpenseInterface {
             use IFirmaEntityTrait;
             use VatExpenseActionsTrait;
@@ -392,7 +392,7 @@ final class SynchronizationManagerTest extends TestCase
     public function testSyncOtherExpenseCanceledByPreEvent(): void
     {
         $manager = $this->makeManager(['Kod' => 0, 'Informacja' => 'OK', 'Wynik' => 'OTH-1']);
-        $request = self::makeOtherCostRequest();
+        $request = $this->makeOtherCostRequest();
         $entity = new class($request) implements IFirmaOtherExpenseInterface {
             use IFirmaEntityTrait;
             use OtherExpenseActionsTrait;

@@ -49,7 +49,7 @@ final class SyncEntitiesCommand extends Command
 
         $repository = $this->findRepository($entityClass);
 
-        if (null === $repository) {
+        if (!$repository instanceof IFirmaEntityRepositoryInterface) {
             $io->error(sprintf('No IFirmaEntityRepositoryInterface found for "%s".', $entityClass));
 
             return Command::FAILURE;

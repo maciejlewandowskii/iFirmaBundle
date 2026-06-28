@@ -70,7 +70,7 @@ final class SyncEntitiesCommandTest extends TestCase
         return new SynchronizationManager($this->makeApi(), $eventDispatcher);
     }
 
-    private static function makeInvoiceEntity(): IFirmaInvoiceInterface
+    private function makeInvoiceEntity(): IFirmaInvoiceInterface
     {
         return new class implements IFirmaInvoiceInterface {
             use IFirmaEntityTrait;
@@ -100,7 +100,7 @@ final class SyncEntitiesCommandTest extends TestCase
 
     public function testCommandSuccessfullySyncsEntities(): void
     {
-        $entity = self::makeInvoiceEntity();
+        $entity = $this->makeInvoiceEntity();
 
         $repository = new readonly class($entity) implements IFirmaEntityRepositoryInterface {
             public function __construct(private IFirmaInvoiceInterface $entity)
@@ -164,7 +164,7 @@ final class SyncEntitiesCommandTest extends TestCase
 
     public function testCommandReturnsFailureWhenSyncThrows(): void
     {
-        $entity = self::makeInvoiceEntity();
+        $entity = $this->makeInvoiceEntity();
 
         $repository = new readonly class($entity) implements IFirmaEntityRepositoryInterface {
             public function __construct(private IFirmaInvoiceInterface $entity)
