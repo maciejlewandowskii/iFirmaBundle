@@ -44,7 +44,7 @@
         "phpstan/phpstan-symfony": "^2.0",
         "phpunit/phpunit": "^11.0",
         "rector/rector": "^2.4",
-        "symfony/dotenv": "^8.1",
+        "symfony/dotenv": "^7.2",
         "symfony/phpunit-bridge": "^7.2"
     },
     "config": {
@@ -54,6 +54,5 @@
         }
     },
     "license": "MIT",
-    "minimum-stability": "stable",
-    "version": "0.0.0"
+    "minimum-stability": "stable"
 }
