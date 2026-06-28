@@ -8,11 +8,11 @@ use function count;
 
 use maciejlewandowskii\iFirmaApi\Repository\IFirmaEntityRepositoryInterface;
 use maciejlewandowskii\iFirmaApi\Synchronization\SynchronizationManager;
+use Override;
 use RuntimeException;
 
 use function sprintf;
 
-use Override;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;

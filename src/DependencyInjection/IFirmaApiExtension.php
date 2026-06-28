@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 final class IFirmaApiExtension extends Extension
 {
     /**
-     * @param array<string, mixed> $configs
+     * @param list<array<string, mixed>> $configs
      *
      * @throws Exception
      */

@@ -11,6 +11,7 @@ use Symfony\Component\Config\Definition\Processor;
 final class ConfigurationTest extends TestCase
 {
     private Processor $processor;
+
     private Configuration $configuration;
 
     protected function setUp(): void
@@ -21,6 +22,7 @@ final class ConfigurationTest extends TestCase
 
     public function testRequiredCredentialsAreProcessed(): void
     {
+        /** @var array{credentials: array{username: string, invoice_key: string, subscriber_key: string, expense_key: string}} $config */
         $config = $this->processor->processConfiguration($this->configuration, [[
             'credentials' => [
                 'username' => 'myuser',
@@ -37,6 +39,7 @@ final class ConfigurationTest extends TestCase
 
     public function testOptionalExpenseKeyCanBeSet(): void
     {
+        /** @var array{credentials: array{username: string, invoice_key: string, subscriber_key: string, expense_key: string}} $config */
         $config = $this->processor->processConfiguration($this->configuration, [[
             'credentials' => [
                 'username' => 'myuser',

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace maciejlewandowskii\iFirmaApi\Tests\Unit;
 
+use function dirname;
+
 use maciejlewandowskii\iFirmaApi\IFirmaApiBundle;
 use PHPUnit\Framework\TestCase;
 

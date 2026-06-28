@@ -28,9 +28,10 @@ use maciejlewandowskii\iFirmaApi\Enum\AuthKeyType;
 use maciejlewandowskii\iFirmaApi\Enum\InvoiceFormat;
 use maciejlewandowskii\iFirmaApi\Enum\KsefInvoiceType;
 use maciejlewandowskii\iFirmaApi\Exception\InvoiceNotFoundException;
-use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 use function sprintf;
+
+use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 final class InvoiceService extends AbstractService
 {

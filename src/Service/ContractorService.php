@@ -13,9 +13,10 @@ use maciejlewandowskii\iFirmaApi\DTO\Response\Contractor\ContractorResponse;
 use maciejlewandowskii\iFirmaApi\Enum\AuthKeyType;
 use maciejlewandowskii\iFirmaApi\Exception\ApiException;
 use maciejlewandowskii\iFirmaApi\Exception\ContractorNotFoundException;
-use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 use function sprintf;
+
+use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 final class ContractorService extends AbstractService
 {

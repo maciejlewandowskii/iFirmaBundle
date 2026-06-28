@@ -56,13 +56,13 @@ jobs:
         with:
           php-version: '8.4'
           coverage: none
-          tools: composer:v2, local-php-security-checker
-
-      - name: Security Check
-        run: local-php-security-checker
+          tools: composer:v2
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
+
+      - name: Security audit
+        run: composer audit
 
       - name: Check for missing dependencies (composer-require-checker)
         run: |

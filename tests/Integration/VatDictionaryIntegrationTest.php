@@ -46,7 +46,7 @@ final class VatDictionaryIntegrationTest extends IntegrationTestCase
         foreach (['DE', 'FR', 'IT', 'ES', 'NL'] as $countryCode) {
             $result = $this->api()->vatDictionaryService->getEuVatRates($countryCode);
 
-            $this->assertNotEmpty($result->rates, "Rates missing for $countryCode");
+            $this->assertNotEmpty($result->rates, "Rates missing for {$countryCode}");
         }
     }
 }

@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace maciejlewandowskii\iFirmaApi\Tests\Unit\DependencyInjection;
 
+use Exception;
 use maciejlewandowskii\iFirmaApi\DependencyInjection\IFirmaApiExtension;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 final class IFirmaApiExtensionTest extends TestCase
 {
-    /** @throws \Exception */
+    /** @throws Exception */
     public function testLoadSetsCredentialParameters(): void
     {
         $extension = new IFirmaApiExtension();
@@ -31,7 +32,7 @@ final class IFirmaApiExtensionTest extends TestCase
         $this->assertSame('exp_123', $container->getParameter('ifirma_api.credentials.expense_key'));
     }
 
-    /** @throws \Exception */
+    /** @throws Exception */
     public function testLoadWithDefaultExpenseKey(): void
     {
         $extension = new IFirmaApiExtension();

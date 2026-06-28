@@ -7,9 +7,10 @@ namespace maciejlewandowskii\iFirmaApi\Service;
 use maciejlewandowskii\iFirmaApi\DTO\Request\Employee\SaveQuestionnaireRequest;
 use maciejlewandowskii\iFirmaApi\DTO\Request\Employee\SendQuestionnaireRequest;
 use maciejlewandowskii\iFirmaApi\Enum\AuthKeyType;
-use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 use function sprintf;
+
+use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 final class EmployeeService extends AbstractService
 {

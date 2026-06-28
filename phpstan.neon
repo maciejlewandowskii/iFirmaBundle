@@ -7,4 +7,4 @@ parameters:
     treatPhpDocTypesAsCertain: false
     excludePaths:
         - src/Resources/config/services.php
-        - examples
+        - examples (?)
